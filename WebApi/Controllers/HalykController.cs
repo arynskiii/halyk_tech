@@ -27,7 +27,7 @@ namespace HalykTz.Controllers
 
 
         [HttpGet("currency")]
-        public async Task<IActionResult> GetCurrencyData([FromQuery] DateTime? date, [FromQuery] string? code)
+        public async Task<IActionResult> GetCurrencyData([FromQuery] DateTime? date, string? code)
         {
             var query = new GetCurrencyQueryCommand { Date = date, Code = code };
             var result = await _mediator.Send(query);
